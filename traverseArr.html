@@ -8,7 +8,31 @@
 
     <script defer>
       const arr = [10, 5, 6, 12, 7, 14];
+      for (i = 0; i < arr.length; i++) {
+        document.write(`Array with index ${i} = ${arr[i]} <br>`);
+      }
+
+      //   Funs
+      const getNumber = () => {
+        let number = document.getElementById("number")?.value;
+        let showNumber = document.getElementById("showNumber");
+        if (number < arr.length) {
+          return (showNumber.innerText = arr[number]);
+        }
+
+        if (number > arr.length) {
+          return alert("array size increased");
+        }
+
+        if (typeof number === "string") {
+          return alert("please enter valid value");
+        }
+      };
     </script>
   </head>
-  <body></body>
+  <body>
+    <input type="text" id="number" />
+    <p id="showNumber"></p>
+    <button type="button" onclick="getNumber()">Get Number</button>
+  </body>
 </html>
